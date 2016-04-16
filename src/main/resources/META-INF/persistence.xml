@@ -15,8 +15,6 @@
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.generate_statistics" value="true"/>
 
-            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
-
         </properties>
     </persistence-unit>
 </persistence>
