@@ -1,4 +1,4 @@
-package eu.corstjens.springboot.hibernaten1selects.model;
+package eu.corstjens.hibernate.n1selects.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

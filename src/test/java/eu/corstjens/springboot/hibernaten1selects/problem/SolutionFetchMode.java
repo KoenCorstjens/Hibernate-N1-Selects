@@ -1,6 +1,6 @@
 package eu.corstjens.springboot.hibernaten1selects.problem;
 
-import eu.corstjens.springboot.hibernaten1selects.model.Category;
+import eu.corstjens.hibernate.n1selects.model.Category;
 import eu.corstjens.springboot.hibernaten1selects.problem.util.BrandUtil;
 import org.junit.After;
 import org.junit.Assert;

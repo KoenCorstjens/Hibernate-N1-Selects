@@ -1,9 +1,9 @@
 package eu.corstjens.springboot.hibernaten1selects.problem.util;
 
-import eu.corstjens.springboot.hibernaten1selects.model.Brand;
-import eu.corstjens.springboot.hibernaten1selects.model.Category;
-import eu.corstjens.springboot.hibernaten1selects.model.Product;
-import eu.corstjens.springboot.hibernaten1selects.model.WebShop;
+import eu.corstjens.hibernate.n1selects.model.Brand;
+import eu.corstjens.hibernate.n1selects.model.Category;
+import eu.corstjens.hibernate.n1selects.model.Product;
+import eu.corstjens.hibernate.n1selects.model.WebShop;
 
 import java.util.List;
 

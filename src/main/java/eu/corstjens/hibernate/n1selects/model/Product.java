@@ -1,4 +1,4 @@
-package eu.corstjens.springboot.hibernaten1selects.model;
+package eu.corstjens.hibernate.n1selects.model;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -10,17 +10,19 @@ import java.util.List;
  * Created by koencorstjens on 17/04/16.
  */
 @Entity
-public class Category {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "ProductCategory",
+        joinColumns = @JoinColumn(name = "productId", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "categoryId", referencedColumnName = "id"))
     @Fetch(FetchMode.SUBSELECT)
-    private List<Product> products;
-
+    private List<Category> categories;
 
     public Long getId() {
         return id;
@@ -38,11 +40,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

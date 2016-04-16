@@ -1,6 +1,6 @@
 package eu.corstjens.springboot.hibernaten1selects.problem;
 
-import eu.corstjens.springboot.hibernaten1selects.model.Brand;
+import eu.corstjens.hibernate.n1selects.model.Brand;
 import eu.corstjens.springboot.hibernaten1selects.problem.util.BrandUtil;
 import org.junit.After;
 import org.junit.Assert;
