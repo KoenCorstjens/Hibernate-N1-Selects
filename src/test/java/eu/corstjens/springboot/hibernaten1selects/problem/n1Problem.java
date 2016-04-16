@@ -36,7 +36,7 @@ public class N1Problem {
         entityManager.getTransaction().begin();
 
         List<Brand> brands = entityManager.createQuery("select b from Brand b", Brand.class).getResultList();
-        Assert.assertEquals(8,brands.size());
+        Assert.assertEquals(8, brands.size());
         BrandUtil.printBrandShop(brands);
 
         entityManager.getTransaction().commit();
