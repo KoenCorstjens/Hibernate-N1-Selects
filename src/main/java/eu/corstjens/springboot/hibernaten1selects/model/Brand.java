@@ -10,12 +10,12 @@ import java.util.Set;
  */
 @Entity
 @NamedEntityGraphs({
-        @NamedEntityGraph(name = "graph.BrandWebshop", attributeNodes = @NamedAttributeNode("webShops")),
+    @NamedEntityGraph(name = "graph.BrandWebshop", attributeNodes = @NamedAttributeNode("webShops")),
 
-        @NamedEntityGraph(name = "graph.BrandWebshopAddress",
-                attributeNodes = @NamedAttributeNode(value = "webShops", subgraph = "webShops"),
-                subgraphs = @NamedSubgraph(name = "webShops", attributeNodes = @NamedAttributeNode("address"))
-        )
+    @NamedEntityGraph(name = "graph.BrandWebshopAddress",
+        attributeNodes = @NamedAttributeNode(value = "webShops", subgraph = "webShops"),
+        subgraphs = @NamedSubgraph(name = "webShops", attributeNodes = @NamedAttributeNode("address"))
+    )
 }
 )
 public class Brand implements Serializable {

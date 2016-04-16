@@ -41,10 +41,10 @@ public class SolutionNamedEntityGraph {
 
 
         List<Brand> brands = entityManager.createQuery("select distinct b from Brand b", Brand.class)
-                .setHint("javax.persistence.loadgraph", graph)
-                .getResultList();
+            .setHint("javax.persistence.loadgraph", graph)
+            .getResultList();
 
-        Assert.assertEquals(8,brands.size());
+        Assert.assertEquals(8, brands.size());
 
         BrandUtil.printBrandShopAddress(brands);
 
@@ -64,9 +64,9 @@ public class SolutionNamedEntityGraph {
 
 
         List<Brand> brands = entityManager.createQuery("select distinct b from Brand b", Brand.class)
-                .setHint("javax.persistence.loadgraph", graph)
-                .getResultList();
-        Assert.assertEquals(8,brands.size());
+            .setHint("javax.persistence.loadgraph", graph)
+            .getResultList();
+        Assert.assertEquals(8, brands.size());
         BrandUtil.printBrandShopAddress(brands);
 
         entityManager.getTransaction().commit();

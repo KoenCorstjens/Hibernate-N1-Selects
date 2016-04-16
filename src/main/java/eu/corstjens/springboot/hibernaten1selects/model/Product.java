@@ -17,10 +17,10 @@ public class Product {
     @Column
     private String name;
 
-    @ManyToMany(fetch=FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "ProductCategory",
-            joinColumns = @JoinColumn(name = "productId", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "categoryId", referencedColumnName = "id"))
+        joinColumns = @JoinColumn(name = "productId", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "categoryId", referencedColumnName = "id"))
     @Fetch(FetchMode.SUBSELECT)
     private List<Category> categories;
 

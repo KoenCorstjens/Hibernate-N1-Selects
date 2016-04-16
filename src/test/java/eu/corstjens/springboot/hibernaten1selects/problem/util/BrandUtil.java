@@ -29,7 +29,7 @@ public class BrandUtil {
             System.out.println("Brand Name: " + brand.getName());
             System.out.println("Shops: ");
             for (WebShop webShop : brand.getWebShops()) {
-                System.out.println("  "+webShop.getName());
+                System.out.println("  " + webShop.getName());
             }
             System.out.println("--------------------");
         }

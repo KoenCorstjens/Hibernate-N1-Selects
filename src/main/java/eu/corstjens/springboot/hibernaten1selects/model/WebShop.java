@@ -18,8 +18,8 @@ public class WebShop implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "WebshopBrand",
-            joinColumns = @JoinColumn(name = "webShopId", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "brandId", referencedColumnName = "id"))
+        joinColumns = @JoinColumn(name = "webShopId", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "brandId", referencedColumnName = "id"))
     private Set<Brand> brands = new HashSet<>();
 
     @OneToMany(mappedBy = "webShop")

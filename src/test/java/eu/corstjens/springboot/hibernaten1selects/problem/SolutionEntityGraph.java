@@ -1,18 +1,19 @@
 package eu.corstjens.springboot.hibernaten1selects.problem;
 
 
-import eu.corstjens.springboot.hibernaten1selects.model.Address;
 import eu.corstjens.springboot.hibernaten1selects.model.Brand;
 import eu.corstjens.springboot.hibernaten1selects.model.WebShop;
 import eu.corstjens.springboot.hibernaten1selects.problem.util.BrandUtil;
-import org.hibernate.FetchMode;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.persistence.*;
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
@@ -43,10 +44,10 @@ public class SolutionEntityGraph {
         webShopSubgraph.addSubgraph("address");
 
         List<Brand> brands = entityManager.createQuery("select distinct b from Brand b", Brand.class)
-                .setHint("javax.persistence.loadgraph", graph)
-                .getResultList();
+            .setHint("javax.persistence.loadgraph", graph)
+            .getResultList();
 
-        Assert.assertEquals(8,brands.size());
+        Assert.assertEquals(8, brands.size());
 
         BrandUtil.printBrandShopAddress(brands);
 
@@ -69,7 +70,7 @@ public class SolutionEntityGraph {
         TypedQuery<Brand> query = entityManager.createQuery(brandCriteriaQuery);
         List<Brand> brands = query.getResultList();
 
-        Assert.assertEquals(8,brands.size());
+        Assert.assertEquals(8, brands.size());
 
         BrandUtil.printBrandShopAddress(brands);
 

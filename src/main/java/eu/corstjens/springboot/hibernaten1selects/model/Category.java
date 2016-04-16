@@ -17,7 +17,7 @@ public class Category {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "categories", fetch=FetchType.LAZY)
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
     @Fetch(FetchMode.SUBSELECT)
     private List<Product> products;
 
