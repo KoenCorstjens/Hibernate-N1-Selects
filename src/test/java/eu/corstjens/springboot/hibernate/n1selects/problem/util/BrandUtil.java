@@ -1,9 +1,6 @@
 package eu.corstjens.springboot.hibernate.n1selects.problem.util;
 
-import eu.corstjens.hibernate.n1selects.model.Brand;
-import eu.corstjens.hibernate.n1selects.model.Category;
-import eu.corstjens.hibernate.n1selects.model.Product;
-import eu.corstjens.hibernate.n1selects.model.WebShop;
+import eu.corstjens.hibernate.n1selects.model.*;
 
 import java.util.List;
 
@@ -18,6 +15,9 @@ public class BrandUtil {
             System.out.println("Shops: ");
             for (WebShop webShop : brand.getWebShops()) {
                 System.out.println("  " + webShop.getName());
+                for (Address address : webShop.getAddress()) {
+                    System.out.println("    " + address.getUrl());
+                }
             }
             System.out.println("--------------------");
         }
