@@ -1,7 +1,7 @@
-package eu.corstjens.springboot.hibernaten1selects.problem;
+package eu.corstjens.springboot.hibernate.n1selects.problem;
 
-import eu.corstjens.hibernate.n1selects.model.Brand;
-import eu.corstjens.springboot.hibernaten1selects.problem.util.BrandUtil;
+import eu.corstjens.hibernate.n1selects.model.Category;
+import eu.corstjens.springboot.hibernate.n1selects.problem.util.BrandUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by koencorstjens on 17/04/16.
  */
-public class N1Problem {
+public class SolutionFetchMode {
 
     private EntityManagerFactory entityManagerFactory;
 
@@ -29,19 +29,16 @@ public class N1Problem {
         entityManagerFactory.close();
     }
 
-
     @Test
-    public void getBrands() {
+    public void getCathegories() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
-        List<Brand> brands = entityManager.createQuery("select b from Brand b", Brand.class).getResultList();
-        Assert.assertEquals(8, brands.size());
-        BrandUtil.printBrandShop(brands);
+        List<Category> categories = entityManager.createQuery("select b from Category b", Category.class).getResultList();
+        Assert.assertEquals(9, categories.size());
+        BrandUtil.print(categories);
 
         entityManager.getTransaction().commit();
         entityManager.close();
-
     }
-
 }

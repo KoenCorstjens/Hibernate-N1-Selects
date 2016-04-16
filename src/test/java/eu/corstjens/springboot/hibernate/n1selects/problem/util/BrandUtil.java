@@ -1,4 +1,4 @@
-package eu.corstjens.springboot.hibernaten1selects.problem.util;
+package eu.corstjens.springboot.hibernate.n1selects.problem.util;
 
 import eu.corstjens.hibernate.n1selects.model.Brand;
 import eu.corstjens.hibernate.n1selects.model.Category;

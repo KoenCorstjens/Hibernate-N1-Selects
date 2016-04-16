@@ -1,7 +1,7 @@
-package eu.corstjens.springboot.hibernaten1selects.problem;
+package eu.corstjens.springboot.hibernate.n1selects.problem;
 
 import eu.corstjens.hibernate.n1selects.model.Brand;
-import eu.corstjens.springboot.hibernaten1selects.problem.util.BrandUtil;
+import eu.corstjens.springboot.hibernate.n1selects.problem.util.BrandUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by koencorstjens on 17/04/16.
  */
-public class SolutionSpecificFetchInQuery {
+public class N1Problem {
 
     private EntityManagerFactory entityManagerFactory;
 
@@ -35,7 +35,7 @@ public class SolutionSpecificFetchInQuery {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
-        List<Brand> brands = entityManager.createQuery("select distinct b from Brand b LEFT JOIN FETCH  b.webShops", Brand.class).getResultList();
+        List<Brand> brands = entityManager.createQuery("select b from Brand b", Brand.class).getResultList();
         Assert.assertEquals(8, brands.size());
         BrandUtil.printBrandShop(brands);
 
@@ -43,4 +43,5 @@ public class SolutionSpecificFetchInQuery {
         entityManager.close();
 
     }
+
 }
